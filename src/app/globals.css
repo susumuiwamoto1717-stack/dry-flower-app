@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF6F1;
+  --color-beige: #E8DDD3;
+  --color-beige-dark: #C4B5A5;
+  --color-pink-muted: #D4A5A5;
+  --color-pink-soft: #E8C4C4;
+  --color-greige: #B5AFA6;
+  --color-green-pale: #C5D1C5;
+  --color-green-sage: #A8B5A0;
+  --color-brown-warm: #8B7355;
+  --color-brown-light: #A89279;
+  --color-text-primary: #4A3F35;
+  --color-text-secondary: #7A6F63;
+  --color-text-light: #9E9389;
+
+  --font-sans: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  --font-serif: "Hiragino Mincho ProN", "Noto Serif JP", "Georgia", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text-primary);
+  background-color: var(--color-cream);
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+
+/* Photo card hover effect */
+.photo-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(139, 115, 85, 0.15);
+}
+.photo-card:active {
+  transform: translateY(-1px);
+}
+
+/* Progress bar */
+.progress-fill {
+  transition: width 0.5s ease;
+}
+
+/* Selection ring */
+.selection-ring {
+  transition: all 0.2s ease;
+}
+.selection-ring.selected {
+  box-shadow: 0 0 0 3px var(--color-pink-muted);
+}
+
+/* Smooth page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
